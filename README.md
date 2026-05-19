@@ -32,3 +32,9 @@ sudo nginx -t
 sudo service nginx start
 
 ----------------------------------------------------------------------------------
+
+docker build .
+
+docker images -a
+
+docker run -it 0e760fdfbc48 /bin/bash
