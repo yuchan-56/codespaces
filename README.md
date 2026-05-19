@@ -1,4 +1,6 @@
-# codespaces
+# Code Snippets
+
+```bash
 
 sudo apt update && sudo apt install netcat-openbsd nginx -y
 
@@ -16,7 +18,7 @@ sudo tee /etc/nginx/sites-available/wargame << 'EOF'
 server {
     listen 80;
     location / {
-        proxy_pass https://mail.naver.com/;
+        proxy_pass http://host8.dreamhack.games:8689/;
         proxy_http_version 1.1;
         proxy_set_header Host "localhost";
         proxy_set_header Upgrade $http_upgrade;
@@ -24,7 +26,6 @@ server {
     }
 }
 EOF
-
 
 sudo ln -s /etc/nginx/sites-available/wargame /etc/nginx/sites-enabled/
 sudo rm /etc/nginx/sites-enabled/default
@@ -38,3 +39,5 @@ docker build .
 docker images -a
 
 docker run -it 0e760fdfbc48 /bin/bash
+
+```
